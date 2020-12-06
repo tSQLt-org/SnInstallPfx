@@ -48,6 +48,15 @@ namespace SnInstallPfx
             var pfxPrivateKey = pfxCert.PrivateKey as RSACryptoServiceProvider;
             var pfxCspBlob = pfxPrivateKey.ExportCspBlob(true);
 
+            Console.WriteLine("Friendly Name: {0}{1}",pfxCert.FriendlyName,Environment.NewLine);
+            Console.WriteLine("Certificate Verified?: {0}{1}",pfxCert.Verify(),Environment.NewLine);
+            Console.WriteLine("Simple Name: {0}{1}",pfxCert.GetNameInfo(X509NameType.SimpleName,true),Environment.NewLine);
+            Console.WriteLine("Signature Algorithm: {0}{1}",pfxCert.SignatureAlgorithm.FriendlyName,Environment.NewLine);
+            Console.WriteLine("Public Key: {0}{1}",pfxCert.PublicKey.Key.ToXmlString(false),Environment.NewLine);
+            Console.WriteLine("Certificate Archived?: {0}{1}",pfxCert.Archived,Environment.NewLine);
+            Console.WriteLine("Length of Raw Data: {0}{1}",pfxCert.RawData.Length,Environment.NewLine);
+//HERE START HERE, PLEASE!
+            Console.WriteLine("Public Key: {0}{1}",System.Reflection.Assembly.GetExecutingAssembly().GetName().GetPublicKey(),Environment.NewLine);
 
             // create cryptographic service provider (CSP) and machine-wide persistent key container
             // more at https://stackoverflow.com/questions/2528186/what-exactly-is-a-key-container

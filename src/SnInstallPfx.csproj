@@ -11,6 +11,9 @@
     <OutputType>Exe</OutputType>
     <Version>0.1.1</Version>
     <ApplicationIcon>key.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>atempkeytotest.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
 </Project>
